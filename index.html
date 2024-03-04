@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><i class="fa-solid fa-house"></i></li>
+            <li><i class="fa-solid fa-user"></i></li>
+            <li class="active"><i class="fa-solid fa-bag-shopping"></i></li>
+            <li><i class="fa-solid fa-images"></i></li>
+            <li><i class="fa-solid fa-gear"></i></li>
+        </ul>
+        <div class="effect">
+            <div class="circle"></div>
+        </div>
+    </nav>
+
+    <script>
+        let nav = document.querySelector('nav');
+        let navItems = nav.querySelectorAll('li');
+
+        function checkPositionActive() {
+            let active = nav.querySelector('li.active');
+            nav.style.setProperty('--position-item-active', active.offsetLeft + 'px');
+        }
+        checkPositionActive();
+
+        navItems.forEach(item => {
+            item.onclick = () => {
+                let oldActive = nav.querySelector('li.active');
+                if(oldActive) oldActive.classList.remove('active');
+                item.classList.add('active');
+                nav.style.setProperty('--position-item-active', item.offsetLeft + 'px');
+            }
+        });
+    </script>
+
+</body>
+</html>
