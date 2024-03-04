@@ -2,13 +2,7 @@ body{
     background-color: #250f2f;
     margin: 0;
     height: 100vh;
-    background:
-    radial-gradient(
-        #fff8 1px, transparent 0
-    ) center / 40px 40px,
-    linear-gradient(
-        45deg, #3cf09e, #605385
-    );
+    background: url(https://i.gifer.com/2eRM.gif) center / cover;
 }
 nav{
     position: fixed;
